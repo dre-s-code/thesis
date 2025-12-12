@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tugas Akhir Andreas</title>
+  <meta name="description" content="Ringkasan hasil skripsi: evaluasi akurasi WRF berbasis GFS dan ERA5 dengan teknik ensemble untuk prediksi curah hujan di ITERA." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+</head>
+<body>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <a class="skip" href="#results" data-i18n="skip">Lewati ke hasil</a>
+
+  <div class="lang" aria-label="Language">
+    <button class="lang-btn" type="button" data-lang="id">ID</button>
+    <button class="lang-btn" type="button" data-lang="en">EN</button>
+    <button class="lang-btn" type="button" data-lang="zh">中文</button>
+    <button class="lang-btn" type="button" data-lang="fr">FR</button>
+  </div>
+
+  <nav class="side-nav" aria-label="Navigasi">
+    <a href="#home" class="dot" data-tip="Beranda" data-i18n-attr="data-tip:nav.home;aria-label:nav.home"></a>
+    <a href="#results" class="dot" data-tip="Hasil" data-i18n-attr="data-tip:nav.results;aria-label:nav.results"></a>
+<a href="#download" class="dot" data-tip="Unduh" data-i18n-attr="data-tip:nav.download;aria-label:nav.download"></a>
+  </nav>
+
+  <header id="home" class="section hero reveal">
+    <div class="container">
+      <div class="hero-center">
+        <p class="badge" data-i18n="hero.badge">Tugas Akhir • Sains Atmosfer dan Keplanetan • Institut Teknologi Sumatera • 2025</p>
+
+        <h1 data-i18n="hero.title">
+          Uji Akurasi Model WRF Berdasarkan Data GFS dan ERA5 dengan Teknik Ensemble untuk Prediksi Curah Hujan di ITERA
+        </h1>
+
+        <div class="meta-lines">
+          <div class="meta-line" data-i18n="hero.authorLine">Andreas Boni Baik Simamora • 121290057</div>
+          <div class="meta-line muted" data-i18n="hero.supervisorLine">Alvin Pratama, S.Si., M.T • Ridlo Wahyudi Wibowo, S.Si., M.Si., M.Sc.</div>
+        </div>
+
+        <div class="mini-stats">
+          <div class="mini-stat clickable" data-open="modal" data-modal="bias" role="button" tabindex="0">
+            <div class="k" data-i18n="stats.bias.k">Bias correction terpilih</div>
+            <div class="v" data-i18n="stats.bias.v">Linear Scaling</div>
+          </div>
+          <div class="mini-stat">
+            <div class="k" data-i18n="stats.best.k">Model tunggal terbaik</div>
+            <div class="v" data-i18n="stats.best.v">WRF-ERA5 Member 9 (r=0,91; RMSE=21,23 mm)</div>
+          </div>
+          <div class="mini-stat clickable" data-open="modal" data-modal="best" role="button" tabindex="0">
+            <div class="k" data-i18n="stats.csi.k">Puncak CSI</div>
+            <div class="v" data-i18n="stats.csi.v">0,60 (Ensemble 3, WRF-ERA5)</div>
+          </div>
+          <div class="mini-stat">
+            <div class="k" data-i18n="stats.roc.k">ROC (AUC)</div>
+            <div class="v" data-i18n="stats.roc.v">0,660–0,676 (kategori sedang)</div>
+          </div>
+        </div>
+
+                <div class="timeline-wrap reveal">
+          <div class="timeline" aria-label="Timeline">
+            <div class="t-step">
+              <div class="t-node" aria-hidden="true"></div>
+              <div class="t-card">
+                <div class="t-title" data-i18n="timeline.p1.title">Seminar Proposal</div>
+                <div class="t-date" data-i18n="timeline.p1.date">28 Februari 2025</div>
+              </div>
+            </div>
+
+            <div class="t-step">
+              <div class="t-node" aria-hidden="true"></div>
+              <div class="t-card">
+                <div class="t-title" data-i18n="timeline.p2.title">Seminar Hasil & Ujian Komprehensif</div>
+                <div class="t-date" data-i18n="timeline.p2.date">21 Mei 2025</div>
+              </div>
+            </div>
+
+            <div class="t-step">
+              <div class="t-node" aria-hidden="true"></div>
+              <div class="t-card">
+                <div class="t-title" data-i18n="timeline.p3.title">Sidang Tugas Akhir</div>
+                <div class="t-date" data-i18n="timeline.p3.date">30 Juni 2025</div>
+              </div>
+            </div>
+
+            <div class="t-step">
+              <div class="t-node" aria-hidden="true"></div>
+              <div class="t-card">
+                <div class="t-title" data-i18n="timeline.p4.title">Yudisium</div>
+                <div class="t-date" data-i18n="timeline.p4.date">Agustus 2025</div>
+              </div>
+            </div>
+
+            <div class="t-step">
+              <div class="t-node" aria-hidden="true"></div>
+              <div class="t-card">
+                <div class="t-title" data-i18n="timeline.p5.title">Wisuda</div>
+                <div class="t-date" data-i18n="timeline.p5.date">15 November 2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta">
+          <a class="btn primary" href="#results" data-i18n="cta.results">Lihat hasil</a>
+          <a class="btn" href="#https://repo.itera.ac.id/depan/submission/SB2508140045" data-i18n="cta.pdf">Buka PDF</a>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="results" class="section reveal">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="results.h">Hasil</h2>
+          <p class="lead" data-i18n="results.lead">Ringkasan temuan utama.</p>
+        </div>
+
+                <div class="grid cards">
+          <article class="card clickable reveal" data-open="modal" data-modal="domain">
+            <div class="card-top">
+              <div class="pill" data-i18n="pill.domain">Domain & periode</div>
+              <div class="chev">↗</div>
+            </div>
+            <h3 data-i18n="card.domain.h">Domain model & periode simulasi</h3>
+            <p data-i18n="card.domain.p">Domain bersarang 9 km → 3 km (rasio 3:1) dengan interval 6 jam, periode 22–27 Januari 2020.</p>
+            <div class="mini" data-i18n="card.domain.mini">Proyeksi: Mercator • Fokus: wilayah ITERA dan sekitarnya.</div>
+          </article>
+
+          <article class="card clickable reveal" data-open="modal" data-modal="config">
+            <div class="card-top">
+              <div class="pill" data-i18n="pill.config">Konfigurasi WRF</div>
+              <div class="chev">↗</div>
+            </div>
+            <h3 data-i18n="card.config.h">Skema fisika & 10 member</h3>
+            <p data-i18n="card.config.p">Sepuluh kombinasi cumulus–mikrofisika digunakan; parameter lain diset sama untuk efisiensi dan konsistensi.</p>
+            <div class="mini" data-i18n="card.config.mini">SW: Dudhia • LW: RRTM • PBL: YSU (tetap untuk semua member).</div>
+          </article>
+
+          <article class="card clickable reveal" data-open="modal" data-modal="bias">
+            <div class="card-top">
+              <div class="pill" data-i18n="pill.bias">Bias correction</div>
+              <div class="chev">↗</div>
+            </div>
+            <h3 data-i18n="card.bias.h">Bias correction terpilih</h3>
+            <p data-i18n="card.bias.p">Linear Scaling dipilih karena RMSE rata-rata lebih rendah dibanding Quantile Mapping.</p>
+            <div class="mini" data-i18n="card.bias.mini">Tabel 4.1 — RMSE (LS) 25,11–25,95 mm • (QM) 28,74–28,81 mm</div>
+          </article>
+
+          <article class="card clickable reveal" data-open="modal" data-modal="best">
+            <div class="card-top">
+              <div class="pill" data-i18n="pill.best">Model tunggal</div>
+              <div class="chev">↗</div>
+            </div>
+            <h3 data-i18n="card.best.h">Model tunggal terbaik</h3>
+            <p data-i18n="card.best.p">WRF-ERA5 Member 9 menjadi model tunggal terbaik berdasarkan verifikasi intensitas.</p>
+            <div class="mini" data-i18n="card.best.mini">r=0,91; RMSE=21,23 mm</div>
+          </article>
+
+          <article class="card clickable reveal" data-open="modal" data-modal="ensemble">
+            <div class="card-top">
+              <div class="pill" data-i18n="pill.ensemble">Ensemble berbobot</div>
+              <div class="chev">↗</div>
+            </div>
+            <h3 data-i18n="card.ensemble.h">Bagaimana Ensemble 1–3 dibentuk</h3>
+            <p data-i18n="card.ensemble.p">Ensemble 1 adalah mean, Ensemble 2 berbobot korelasi–RMSE, Ensemble 3 berbobot POD–FAR.</p>
+            <div class="mini" data-i18n="card.ensemble.mini">Bobot dinormalisasi (jumlah bobot = 1) sebelum digabungkan.</div>
+          </article>
+
+          <article class="card clickable reveal" data-open="modal" data-modal="event">
+            <div class="card-top">
+              <div class="pill" data-i18n="pill.event">Kejadian hujan</div>
+              <div class="chev">↗</div>
+            </div>
+            <h3 data-i18n="card.event.h">CSI tertinggi</h3>
+            <p data-i18n="card.event.p">Ensemble 3 WRF-ERA5 mencapai CSI maksimum 0,60 pada uji kejadian hujan.</p>
+            <div class="mini" data-i18n="card.event.mini">Hit–Miss–False Alarm diringkas menjadi CSI.</div>
+          </article>
+
+          <article class="card clickable reveal" data-open="modal" data-modal="roc">
+            <div class="card-top">
+              <div class="pill" data-i18n="pill.roc">ROC</div>
+              <div class="chev">↗</div>
+            </div>
+            <h3 data-i18n="card.roc.h">ROC (AUC)</h3>
+            <p data-i18n="card.roc.p">AUC 0,660–0,676 (kategori sedang) dengan ambang optimal yang berbeda.</p>
+            <div class="mini" data-i18n="card.roc.mini">GFS lebih peka hujan ringan; ERA5 lebih kuat pada hujan sedang–lebat.</div>
+          </article>
+        </div>
+
+        <div class="callout reveal">
+          <div class="callout-title" data-i18n="results.oneLine.h">Kesimpulan ringkas</div>
+          <p class="callout-text" data-i18n="results.oneLine.p">
+            Koreksi bias dan ensemble meningkatkan keterandalan, dengan perbedaan paling jelas pada sensitivitas hujan ringan vs sedang–lebat.
+          </p>
+        </div>
+      </div>
+    </section>
+<section id="download" class="section reveal">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="download.h">Dokumen</h2>
+          <p class="lead" data-i18n论文="download.lead">Naskah tersedia di Repository ITERA.</p>
+        </div>
+
+        <div class="download-card reveal">
+          <div>
+            <div class="download-title">Skripsi Andreas.pdf</div>
+            <div class="download-sub" data-i18n="download.sub">Buka atau unduh dari browser.</div>
+          </div>
+          <div class="download-actions">
+            <a class="btn primary" href="https://repo.itera.ac.id/depan/submission/SB2508140045" target="_blank" rel="noopener" data-i18n="download.open">Buka PDF</a>
+            <a class="btn" href="https://repo.itera.ac.id/depan/submission/SB2508140045" download data-i18n="download.save">Unduh</a>
+          </div>
+        </div>
+
+        <footer class="footer reveal">
+          <div class="footer-left">
+            <div class="small" data-i18n="footer.line1">© 2025 Andreas Boni Baik Simamora</div>
+            <div class="small muted" data-i18n="footer.line2">Ringkasan hasil skripsi (fokus pada bab Hasil).</div>
+          </div>
+          <div class="footer-right">
+            <a class="small link" href="#home" data-i18n="footer.top">Kembali ke atas ↑</a>
+          </div>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-label="Detail">
+    <div class="modal-backdrop" data-close="1"></div>
+    <div class="modal-dialog" role="document">
+      <button class="modal-close" type="button" data-close="1" data-i18n-attr="aria-label:modal.close">✕</button>
+      <div class="modal-head">
+        <div class="modal-title" id="modalTitle"></div>
+      </div>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
