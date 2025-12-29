@@ -15,6 +15,21 @@
   --max: 1120px;
 }
 
+body.theme-light{
+  --bg0:#f6f7fb;
+  --bg1:#edf0f6;
+  --card:rgba(255,255,255,0.85);
+  --card2:rgba(255,255,255,0.92);
+  --stroke:rgba(20,25,35,0.10);
+  --stroke2:rgba(20,25,35,0.18);
+  --text:#1f2430;
+  --muted:#5a6474;
+  --muted2:#7b8493;
+  --accent:#b38a2a;
+  --accent2:#7e8a99;
+  --shadow: 0 18px 50px rgba(20,26,40,0.12);
+}
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
@@ -27,6 +42,12 @@ body{
     linear-gradient(180deg, var(--bg0), var(--bg1) 50%, #06070a);
   min-height:100vh;
   overflow-x:hidden;
+}
+body.theme-light{
+  background:
+    radial-gradient(1200px 900px at 15% 0%, rgba(255,214,130,0.15), transparent 60%),
+    radial-gradient(900px 700px at 85% 25%, rgba(157,198,255,0.20), transparent 55%),
+    linear-gradient(180deg, var(--bg0), var(--bg1) 60%, #f8f9fc);
 }
 
 a{color:inherit}
@@ -41,6 +62,54 @@ img{max-width:100%; display:block}
   border-radius:12px;
 }
 .skip:focus{left:10px; z-index:999}
+
+.utility{
+  position:fixed;
+  top:16px;
+  left:16px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  z-index:1300;
+}
+.theme-toggle{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid var(--stroke2);
+  background:rgba(255,255,255,0.08);
+  color:var(--text);
+  font-size:13px;
+  letter-spacing:.2px;
+  transition:transform .18s ease, background .18s ease, border-color .18s ease;
+}
+.theme-toggle:hover{
+  transform:translateY(-1px);
+  background:rgba(255,255,255,0.12);
+  border-color:rgba(255,255,255,0.28);
+  cursor:pointer;
+}
+body.theme-light .theme-toggle{
+  background:rgba(255,255,255,0.9);
+}
+.clock{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:14px;
+  border:1px solid var(--stroke);
+  background:rgba(255,255,255,0.05);
+  font-size:13px;
+  color:var(--muted);
+}
+.clock-time{
+  font-weight:500;
+  color:var(--text);
+  letter-spacing:.3px;
+}
 
 .progress{
   position:fixed;
@@ -108,6 +177,7 @@ img{max-width:100%; display:block}
   .side-nav{display:none}
   .hero-grid{grid-template-columns:1fr; gap:18px}
   .hero{padding-top:64px}
+  .utility{left:12px; top:12px}
 }
 
 .badge{
