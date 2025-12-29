@@ -11,7 +11,9 @@
         supervisorLine: "Alvin Pratama, S.Si., M.T • Ridlo Wahyudi Wibowo, S.Si., M.Si., M.Sc.",
         hint: "Klik ringkasan di atas untuk melihat detail singkat."
       },
-      cta: { results: "Lihat hasil", pdf: "Buka PDF" },
+      cta: { results: "Lihat hasil", repository: "Buka Repository" },
+      theme: { toLight: "Mode terang", toDark: "Mode gelap" },
+      clock: { label: "Waktu" },
       stats: {
         bias: { k: "Bias correction terpilih", v: "Linear Scaling" },
         best: { k: "Model tunggal terbaik", v: "WRF-ERA5 Member 9 (r=0,91; RMSE=21,23 mm)" },
@@ -220,7 +222,9 @@
       download: {
         h: "Dokumen",
         lead: "Skripsi tersedia di Repository ITERA.",
-        open: "Buka",
+        sub: "Kunjungi halaman repository resmi kampus.",
+        open: "Buka Repository",
+        save: "Kunjungi Repository"
       },
       footer: {
         line1: "© 2025 Andreas Boni Baik Simamora",
@@ -239,7 +243,9 @@
         supervisorLine: "Supervisors: Alvin Pratama • Ridlo Wahyudi Wibowo",
         hint: "Click each result card for a short detail."
       },
-      cta: { results: "View results", pdf: "Open PDF" },
+      cta: { results: "View results", repository: "Open repository" },
+      theme: { toLight: "Light mode", toDark: "Dark mode" },
+      clock: { label: "Time" },
       stats: {
         bias: { k: "Selected bias correction", v: "Linear Scaling" },
         best: { k: "Best single model", v: "WRF-ERA5 Member 9 (r=0.91; RMSE=21.23 mm)" },
@@ -442,10 +448,10 @@
       },
       download: {
         h: "Document",
-        lead: "The thesis PDF is included in this website folder.",
-        sub: "Open or download in your browser.",
-        open: "Open PDF",
-        save: "Download"
+        lead: "The thesis is available in the ITERA Repository.",
+        sub: "Visit the official campus repository page.",
+        open: "Open repository",
+        save: "Visit repository"
       },
       footer: {
         line1: "© 2025 Andreas Boni Baik Simamora",
@@ -464,7 +470,9 @@
         supervisorLine: "导师：Alvin Pratama • Ridlo Wahyudi Wibowo",
         hint: "点击每张结果卡片查看简要细节。"
       },
-      cta: { results: "查看结果", pdf: "打开PDF" },
+      cta: { results: "查看结果", repository: "打开存储库" },
+      theme: { toLight: "亮色模式", toDark: "深色模式" },
+      clock: { label: "时间" },
       stats: {
         bias: { k: "选定偏差订正", v: "Linear Scaling" },
         best: { k: "最佳单一模式", v: "WRF-ERA5 成员9（r=0.91；RMSE=21.23 mm）" },
@@ -657,10 +665,10 @@
       },
       download: {
         h: "文档",
-        lead: "论文PDF已包含在网站文件夹中。",
-        sub: "在浏览器中打开或下载。",
-        open: "打开PDF",
-        save: "下载"
+        lead: "论文已发布于 ITERA 存储库。",
+        sub: "访问官方校园存储库页面。",
+        open: "打开存储库",
+        save: "访问存储库"
       },
       footer: {
         line1: "© 2025 Andreas Boni Baik Simamora",
@@ -679,7 +687,9 @@
         supervisorLine: "Encadrants : Alvin Pratama • Ridlo Wahyudi Wibowo",
         hint: "Cliquez sur chaque carte pour un détail court."
       },
-      cta: { results: "Voir les résultats", pdf: "Ouvrir le PDF" },
+      cta: { results: "Voir les résultats", repository: "Ouvrir le dépôt" },
+      theme: { toLight: "Mode clair", toDark: "Mode sombre" },
+      clock: { label: "Heure" },
       stats: {
         bias: { k: "Correction de biais retenue", v: "Linear Scaling" },
         best: { k: "Meilleur modèle simple", v: "WRF-ERA5 Membre 9 (r=0,91 ; RMSE=21,23 mm)" },
@@ -872,10 +882,10 @@
       },
       download: {
         h: "Document",
-        lead: "Le PDF du mémoire est inclus dans le dossier du site.",
-        sub: "Ouvrir ou télécharger via le navigateur.",
-        open: "Ouvrir le PDF",
-        save: "Télécharger"
+        lead: "Le mémoire est disponible dans le dépôt ITERA.",
+        sub: "Visiter la page officielle du dépôt.",
+        open: "Ouvrir le dépôt",
+        save: "Visiter le dépôt"
       },
       footer: {
         line1: "© 2025 Andreas Boni Baik Simamora",

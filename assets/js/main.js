@@ -20,6 +20,9 @@
     return (typeof v === "string") ? v : "";
   };
 
+  let updateThemeLabel = () => {};
+  let updateClock = () => {};
+
   const applyLang = (lang) => {
     currentLang = LANGS.includes(lang) ? lang : "id";
     localStorage.setItem("lang", currentLang);
@@ -53,13 +56,46 @@
         if (val) el.setAttribute(attr, val);
       });
     });
+
+    updateThemeLabel();
+    updateClock();
   };
 
   langBtns.forEach(btn => {
     btn.addEventListener("click", () => applyLang(btn.dataset.lang));
   });
 
-  applyLang(currentLang);
+  // ---------------------------
+  // Theme toggle
+  // ---------------------------
+  const themeToggle = $("[data-theme-toggle]");
+  const THEME_KEY = "theme";
+  const prefersLight = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
+  let currentTheme = (localStorage.getItem(THEME_KEY) || (prefersLight ? "light" : "dark")).toLowerCase();
+  if (!["light", "dark"].includes(currentTheme)) currentTheme = "dark";
+
+  const applyTheme = (theme) => {
+    currentTheme = theme === "light" ? "light" : "dark";
+    document.body.classList.toggle("theme-light", currentTheme === "light");
+    if (themeToggle) themeToggle.setAttribute("aria-pressed", currentTheme === "light");
+    localStorage.setItem(THEME_KEY, currentTheme);
+    updateThemeLabel();
+  };
+
+  updateThemeLabel = () => {
+    if (!themeToggle) return;
+    const labelKey = currentTheme === "light" ? "theme.toDark" : "theme.toLight";
+    const label = t(labelKey);
+    themeToggle.textContent = label || "Toggle theme";
+  };
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      applyTheme(currentTheme === "light" ? "dark" : "light");
+    });
+  }
+
+  applyTheme(currentTheme);
 
   // ---------------------------
   // Reveal on scroll (fade in/out)
@@ -89,7 +125,7 @@
   // ---------------------------
   // Active dot nav
   // ---------------------------
-  const sections = ["home", "results", "figures", "download"]
+  const sections = ["home", "results", "download"]
     .map(id => document.getElementById(id))
     .filter(Boolean);
   const dots = $$(".side-nav .dot");
@@ -170,7 +206,7 @@
     }
   });
 
-    document.addEventListener("keydown", (e) => {
+  document.addEventListener("keydown", (e) => {
     // Keyboard support for clickable elements
     if ((e.key === "Enter" || e.key === " ") && document.activeElement) {
       const el = document.activeElement.closest?.(".clickable");
@@ -183,4 +219,29 @@
 
     if (e.key === "Escape" && modal && modal.classList.contains("show")) closeModal();
   });
+
+  // ---------------------------
+  // Clock
+  // ---------------------------
+  const clockTime = $("#clockTime");
+  const localeMap = {
+    id: "id-ID",
+    en: "en-US",
+    zh: "zh-CN",
+    fr: "fr-FR"
+  };
+  updateClock = () => {
+    if (!clockTime) return;
+    const locale = localeMap[currentLang] || "id-ID";
+    const now = new Date();
+    const time = new Intl.DateTimeFormat(locale, {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit"
+    }).format(now);
+    clockTime.textContent = time;
+  };
+
+  applyLang(currentLang);
+  setInterval(updateClock, 1000);
 })();
